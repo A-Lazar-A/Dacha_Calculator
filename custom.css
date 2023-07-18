@@ -1,0 +1,91 @@
+
+body{
+    display: flex;
+    background: cornflowerblue;
+}
+
+.wrapper{
+    max-width: 490px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px 25px 20px;
+}
+
+.container{
+    max-width: 1000px;
+}
+.content ul{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 7px;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+}
+.content ul li{
+    list-style: none;
+    margin: 4px 3px;
+    background: aliceblue;
+    border-radius: 5px;
+    padding: 5px 8px 5px 10px;
+    border: 1px solid #e3d1e1;
+}
+.content ul li i{
+    height: 20px;
+    width: 20px;
+    font-size: 12px;
+    border-radius: 50%;
+    background: gainsboro;
+    justify-content: center;
+    cursor: pointer;
+}
+.content ul input{
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 16px;
+}
+.details p{
+
+    font-size: 15px;
+    margin-bottom: 0;
+}
+.details button, .datatable-input button, .calculate button{
+    font-size: 14px;
+    padding: 9px 15px;
+    color: #fff;
+    background: cornflowerblue;
+
+}
+
+.details button:hover, .datatable-input button:hover,.calculate button:hover{
+    color: #fff;
+    background: #4F5BD6;
+}
+
+.wrapper-calc-table{
+
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px 25px 20px;
+}
+.wrapper-table{
+
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px 25px 20px;
+}
+.wrapper-table input{
+    flex: 1;
+    border-radius: 5px;
+    border-width: 1px;
+    outline: none;
+    padding: 5px;
+    font-size: 16px;
+    max-width: 125px;
+}
+.wrapper-table input::-webkit-outer-spin-button,
+.wrapper-table input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
