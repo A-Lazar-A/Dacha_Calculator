@@ -47,7 +47,7 @@ function createProduct() {
                     </div>
                 </td>
                 <td>
-                    <select class="selectpicker" multiple data-live-search="true" data-width="fit" data-actions-box="true" data-selected-text-format="count > 2">
+                    <select class="selectpicker" multiple data-container="body" data-live-search="true" data-width="fit" data-actions-box="true" data-selected-text-format="count > 2">
                         ${td}
                     </select>
                 </td>
