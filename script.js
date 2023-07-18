@@ -93,6 +93,10 @@ function removeSelect(tag) {
 
 function refreshSelect() {
     selectors.forEach(select => {
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+            $(select).selectpicker('mobile');
+        }
+
         $(select).selectpicker('refresh');
     })
 }
