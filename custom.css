@@ -63,17 +63,14 @@ body{
     background: #4F5BD6;
 }
 
-.wrapper-calc-table{
+.wrapper-calc-table, .wrapper-table, .wrapper-chart{
 
     background: #fff;
     border-radius: 10px;
     padding: 18px 25px 20px;
 }
-.wrapper-table{
-
-    background: #fff;
-    border-radius: 10px;
-    padding: 18px 25px 20px;
+.wrapper-chart{
+    height: 500px !important;
 }
 .wrapper-table input{
     flex: 1;

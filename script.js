@@ -16,6 +16,38 @@ let products = (JSON.parse(localStorage.getItem("products-list"))) ? JSON.parse(
 let calcData = new Map();
 
 
+const data = {
+    labels: [],
+    datasets: [{
+        label: '',
+        data: [],
+        hoverOffset: 4
+    }]
+};
+const config = {
+    type: 'doughnut',
+    data: data,
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'People'
+            }
+        }
+    },
+};
+let chart = new Chart(
+    document.getElementById('chart'),
+    config
+)
+
+
+
+
 function countName() {
 
     counterName.innerText = maxNames - tags.length;
@@ -154,6 +186,21 @@ function addProduct() {
     refreshSelect();
 }
 
+function createChart(names, prices, ){
+
+    const data = {
+        labels: names,
+        datasets: [{
+            label: 'Sum',
+            data: prices,
+
+            hoverOffset: 4
+        }]
+    };
+    chart.data = data;
+    chart.update();
+    document.getElementById('chart').parentElement.classList.remove("visually-hidden");
+}
 function calculate() {
     let tableRows = tableTbody.rows;
 
@@ -191,6 +238,8 @@ function calculate() {
 function showCalcTable() {
     let tr  = '';
     let rows = '';
+    let names = [];
+    let prices = [];
 
     products.forEach(product => {
         let th = `<th scope="col">${product.name}</th>`;
@@ -204,6 +253,9 @@ function showCalcTable() {
             row += `<td>${value[product.name].toFixed(2)}</td>`
             total += +value[product.name];
         })
+        names.push(key);
+        prices.push(total);
+
         row += `<td class="table-primary">${total.toFixed(2)}</td>`;
         rows += `<tr>${row}</tr>`;
     })
@@ -218,6 +270,7 @@ function showCalcTable() {
     calcTable.querySelector("thead").innerHTML = thred;
     calcTable.querySelector("tbody").innerHTML = rows;
     calcTable.parentElement.parentElement.classList.remove("visually-hidden");
+    createChart(names, prices);
 }
 
 addBtn.addEventListener("click", addProduct);
